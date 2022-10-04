@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
+
+  --clr-primary-cream: hsl(30, 38%, 92%);
+  --clr-neutral-grayish-green: hsl(212, 21%, 14%);
+  --clr-neutral-aquamarine: hsla(157, 36%, 37%, 1);
+  --clr-neutral-deep-aquamarine: hsla(157, 43%, 18%, 1);
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-primary-cream);
+}
+
+h1 {
+  font-family: var(--ff-secondary);
+}
+
+span {
+  color: var(--clr-neutral-aquamarine);
+}
+
+button {
+  background-color: var(--clr-neutral-aquamarine);
+}
+
+button:hover {
+  background-color: var(--clr-neutral-deep-aquamarine);
+}
