@@ -1,10 +1,12 @@
 import Card from "./Card";
+import Info from "./Info";
 import { useForm, FormProvider } from "react-hook-form";
 
 type FormInputs = {
   theName: string;
   cardNumber: string;
-  theDate: string;
+  theMonth: string;
+  theYear: string;
   verCode: string;
 };
 
@@ -30,7 +32,9 @@ function App() {
     <FormProvider {...methods}>
       <div className="h-screen">
         <Card />
-        <form onChange={methods.handleSubmit(onSubmit)}></form>
+        <form onChange={methods.handleSubmit(onSubmit)}>
+          <Info />
+        </form>
       </div>
     </FormProvider>
   );
