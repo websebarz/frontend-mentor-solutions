@@ -28,6 +28,16 @@ function Card() {
       <span className="absolute top-[211px] left-[35px] text-lg tracking-widest font-['Space_Grotesk']">
         0000 0000 0000 0000
       </span>
+
+      <span className="absolute top-[251px] left-[35px] font-['Space_Grotesk'] text-[9px] tracking-widest">
+        JANE APPLESEED
+      </span>
+      <span className="absolute top-[251px] left-[243px] font-['Space_Grotesk'] text-[9px] tracking-widest">
+        00/00
+      </span>
+      <span className="absolute top-[102px] left-[301px] text-[9px] font-['Space_Grotesk'] tracking-widest">
+        000
+      </span>
     </section>
   );
 }
