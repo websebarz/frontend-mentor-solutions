@@ -12,8 +12,8 @@ type FormInputs = {
 
 function App() {
   const methods = useForm<FormInputs>({
-    mode: "onChange",
-    reValidateMode: "onChange",
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
     defaultValues: {},
     resolver: undefined,
     context: undefined,
@@ -24,15 +24,17 @@ function App() {
     delayError: undefined,
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: any, e: any) => {
+    // e.preventDefault();
     console.log(data);
+    alert(JSON.stringify(data));
   };
 
   return (
     <FormProvider {...methods}>
       <div className="h-screen">
         <Card />
-        <form onChange={methods.handleSubmit(onSubmit)}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Info />
         </form>
       </div>

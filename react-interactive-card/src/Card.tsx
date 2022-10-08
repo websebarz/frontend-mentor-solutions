@@ -1,4 +1,12 @@
+import { useFormContext } from "react-hook-form";
+
 function Card() {
+  const { watch } = useFormContext();
+  const userName = watch("theName");
+  const cardNumber = watch("cardNumber");
+  const monthEl = watch("theMonth");
+  const yearEl = watch("theYear");
+  const verEl = watch("verCode");
   return (
     <section className="relative w-screen h-[240px]">
       <img
@@ -26,17 +34,22 @@ function Card() {
         />
       </svg>
       <span className="absolute top-[211px] left-[35px] text-lg tracking-widest font-['Space_Grotesk']">
-        0000 0000 0000 0000
+        {cardNumber
+          ? cardNumber
+              .replace(/\s|[^0-9]+/g, "")
+              .match(/.{1,4}/g)
+              ?.join(" ") ?? ""
+          : "0000 0000 0000 0000"}
       </span>
 
       <span className="absolute top-[251px] left-[35px] font-['Space_Grotesk'] text-[9px] tracking-widest">
-        JANE APPLESEED
+        {userName ? userName : "Jane Appleseed"}
       </span>
       <span className="absolute top-[251px] left-[243px] font-['Space_Grotesk'] text-[9px] tracking-widest">
-        00/00
+        {monthEl & yearEl ? `${monthEl}/${yearEl}` : "00/00"}
       </span>
       <span className="absolute top-[102px] left-[301px] text-[9px] font-['Space_Grotesk'] tracking-widest">
-        000
+        {verEl ? verEl : "000"}
       </span>
     </section>
   );

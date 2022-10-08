@@ -1,7 +1,8 @@
 import { useFormContext } from "react-hook-form";
 
 function Info() {
-  const { register, setValue, watch } = useFormContext();
+  const { register, setValue } = useFormContext();
+
   return (
     <div className="flex flex-col mt-[4em] p-[0.5em] w-[327px] ml-auto mr-auto">
       <div className="w-full">
@@ -60,13 +61,26 @@ function Info() {
             type="text"
             required
             placeholder={"e.g. 123"}
-            {...register("theYear")}
+            {...register("verCode")}
           />
         </div>
       </div>
-      <button className="w-full bg-dark-violet rounded-lg mt-[1em] p-[0.5em]">
+      {/* <button
+        type="submit"
+        className="w-full bg-dark-violet rounded-lg mt-[1em] p-[0.5em]"
+        onSubmit={() =>
+          setValue("theName", "cardNumber", {
+            shouldValidate: true,
+            shouldDirty: true,
+          })
+        }
+      >
         CONFIRM
-      </button>
+      </button> */}
+      <input
+        type="submit"
+        className="w-full bg-dark-violet text-[#fff] rounded-lg mt-[1em] p-[0.5em] cursor-pointer"
+      />
     </div>
   );
 }
