@@ -32,9 +32,9 @@ function App() {
 
   return (
     <FormProvider {...methods}>
-      <div className="h-screen">
+      <div className="h-screen lg:flex">
         <Card />
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="lg:w-[65%]">
           <Info />
         </form>
       </div>

@@ -4,7 +4,7 @@ function Info() {
   const { register, setValue } = useFormContext();
 
   return (
-    <div className="flex flex-col mt-[4em] p-[0.5em] w-[327px] ml-auto mr-auto">
+    <div className="flex flex-col mt-[4em] lg:mt-[8em] p-[0.5em] w-[327px] ml-auto mr-auto lg:w-[381px]">
       <div className="w-full">
         <label className="font-['Space_Grotesk'] tracking-widest text-xs">
           CARDHOLDER NAME
