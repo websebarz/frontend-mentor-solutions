@@ -3,6 +3,15 @@ import Card from "./comps/Card";
 import CardForm from "./comps/CardForm";
 import RegComplete from "./comps/RegComplete";
 
+// type FormValues = {
+//   name: string;
+//   cardNumber: string;
+//   month: string;
+//   year: string;
+//   cvc: string;
+//   isRegComplete: boolean;
+// };
+
 const initialState = {
   name: "JANE APPLESEED",
   cardNumber: "0000 0000 0000 0000",

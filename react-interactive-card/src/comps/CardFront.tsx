@@ -1,6 +1,6 @@
 import cardSvg from "/imgs/card-logo.svg";
 import background from "/imgs/bg-card-front.png";
-const CardFront = ({ name, cardNumber, month, year, cvc }) => {
+const CardFront = ({ name, cardNumber, month, year }) => {
   return (
     <div
       className="flex flex-col justify-between px-5 sm:px-8 py-5 sm:py-8 text-white rounded-lg w-full h-full"
@@ -10,7 +10,12 @@ const CardFront = ({ name, cardNumber, month, year, cvc }) => {
       <div className="flex flex-col space-y-5">
         <div className="text-lg sm:text-3xl tracking-wider sm:tracking-wide">
           <div>
-            <p className="">{cardNumber}</p>
+            <p className="">
+              {cardNumber
+                .replace(/\s|[^0-9]+/g, "")
+                .match(/.{1,4}/g)
+                ?.join(" ") ?? ""}
+            </p>
           </div>
         </div>
         <div className="flex justify-between text-xs sm:text-sm">

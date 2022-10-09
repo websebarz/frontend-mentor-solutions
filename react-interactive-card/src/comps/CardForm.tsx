@@ -1,12 +1,20 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 const CardForm = ({ onSubmit, onInputChange }) => {
+  type FormValues = {
+    name: string;
+    cardNumber: string;
+    month: string;
+    year: string;
+    cvc: string;
+  };
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({
+  } = useForm<FormValues>({
     defaultValues: {
       name: "",
       cardNumber: "",
@@ -26,7 +34,7 @@ const CardForm = ({ onSubmit, onInputChange }) => {
   }, [watch]);
 
   return (
-    <div className="mt-24 sm:mt-60 w-80 mx-auto">
+    <div className="mt-16 sm:mt-60 w-80 mx-auto">
       <form onSubmit={handleSubmit(() => onSubmit())}>
         <div className="my-5">
           <h1>
