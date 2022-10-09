@@ -4,14 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-section {
-  background: url(imgs/bg-main-mobile.png);
-}
-
-span {
-  color: #fff;
-}
-
-button {
-  color: #fff;
+body {
+  font-family: "Space Grotesk", sans-serif;
 }
