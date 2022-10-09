@@ -24,10 +24,13 @@ const Form = () => {
   });
   return (
     <>
-      <div className="w-[90%] mr-auto ml-auto bg-blue p-4 rounded-lg text-center shadow-lg">
-        <p className="text-white">Try it free 7 days then $20/mo. thereafter</p>
-      </div>
-      <div className="w-[90%] p-4 bg-white mr-auto ml-auto rounded-md mt-4 shadow-lg">
+      <div className="relative w-[90%] lg:max-w-[474px] p-4 bg-white mr-auto ml-auto rounded-md shadow-lg">
+        <div className="absolute -top-28 w-[90%] max-h-fit mr-auto ml-auto bg-blue p-4 rounded-lg text-center shadow-lg">
+          <p className="text-white font-medium">
+            Try it free 7 days{" "}
+            <span className="font-light">then $20/mo. thereafter</span>
+          </p>
+        </div>
         <form>
           <div className="flex flex-col">
             <h1>
@@ -88,6 +91,7 @@ const Form = () => {
               <div className="w-full">
                 <input
                   id="password"
+                  placeholder="*********"
                   className="w-full   border rounded-lg focus:outline-0 p-2 cursor-pointer"
                   {...register("password", { required: true })}
                 />
