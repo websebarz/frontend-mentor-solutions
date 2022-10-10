@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const Form = () => {
+const Form = ({ onInputChange, onSubmit }) => {
   type FormValues = {
     firstName: string;
     lastName: string;
@@ -22,6 +23,15 @@ const Form = () => {
       isCompleted: false,
     },
   });
+
+  useEffect(() => {
+    const suscription = watch((data) => {
+      onInputChange(data);
+    });
+    return () => {
+      suscription.unsubscribe;
+    };
+  }, [watch]);
   return (
     <>
       <div className="relative w-[90%] lg:max-w-[474px] p-4 bg-white mr-auto ml-auto rounded-md shadow-lg">
@@ -31,7 +41,7 @@ const Form = () => {
             <span className="font-light">then $20/mo. thereafter</span>
           </p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit(() => onSubmit())}>
           <div className="flex flex-col">
             <h1>
               <label htmlFor="firstName">First Name</label>
@@ -44,10 +54,11 @@ const Form = () => {
                   className="w-full   border rounded-lg focus:outline-0 p-2 cursor-pointer"
                   {...register("firstName", { required: true })}
                 />
-                {}
               </div>
             </div>
-            {}
+            {errors.firstName && (
+              <div className="text-red mb-0">Can't be blank</div>
+            )}
           </div>
           <div className="flex flex-col mt-4">
             <h1>
@@ -61,10 +72,9 @@ const Form = () => {
                   className="w-full   border rounded-lg focus:outline-0 p-2 cursor-pointer"
                   {...register("lastName", { required: true })}
                 />
-                {}
               </div>
             </div>
-            {}
+            {errors.lastName && <div className="text-red">Can't be blank</div>}
           </div>
           <div className="flex flex-col mt-4">
             <h1>
@@ -78,10 +88,9 @@ const Form = () => {
                   className="w-full   border rounded-lg focus:outline-0 p-2 cursor-pointer"
                   {...register("email", { required: true })}
                 />
-                {}
               </div>
             </div>
-            {}
+            {errors.email && <div className="text-red">Can't be blank</div>}
           </div>
           <div className="flex flex-col mt-4">
             <h1>
@@ -91,14 +100,13 @@ const Form = () => {
               <div className="w-full">
                 <input
                   id="password"
-                  placeholder="*********"
+                  type={"password"}
                   className="w-full   border rounded-lg focus:outline-0 p-2 cursor-pointer"
                   {...register("password", { required: true })}
                 />
-                {}
               </div>
             </div>
-            {}
+            {errors.password && <div className="text-red">Can't be blank</div>}
           </div>
           <button className="w-full bg-green rounded-lg mt-4 p-4 text-white shadow-lg">
             CLAIM YOUR FREE TRIAL

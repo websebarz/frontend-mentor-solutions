@@ -1,8 +1,22 @@
 import { useState } from "react";
 import Form from "./comps/Form";
-
+import FormCompleted from "./comps/FormCompleted";
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  isCompleted: false,
+};
 function App() {
-  const [count, setCount] = useState(0);
+  const [info, setInfo] = useState(initialState);
+  const updateInfo = (info: any) => setInfo({ ...info });
+  const resetInfo = () => setInfo(initialState);
+  const regComplete = () => {
+    info.isCompleted = true;
+    console.log(info);
+    setInfo({ ...info });
+  };
 
   return (
     <div className="h-screen bg-red lg:grid lg:grid-cols-2 lg:content-center">
@@ -18,7 +32,11 @@ function App() {
           </p>
         </div>
       </section>
-      <Form />
+      {!info.isCompleted ? (
+        <Form onInputChange={updateInfo} onSubmit={regComplete} />
+      ) : (
+        <FormCompleted onComplete={resetInfo} />
+      )}
     </div>
   );
 }
