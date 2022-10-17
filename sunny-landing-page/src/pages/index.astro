@@ -1,12 +1,15 @@
 ---
+import Clients from '../components/Clients.astro';
+import Hero from '../components/Hero.astro';
+import ImageGrid from '../components/ImageGrid.astro';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import "../styles/index.css";
 ---
 
 <Layout title="Welcome to" name="SunnyPage">
 	<main>
-		<Header />
+		<Hero />
+		<Clients />
+		<ImageGrid />
 	</main>
 </Layout>
 

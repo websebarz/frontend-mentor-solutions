@@ -1,10 +1,40 @@
+---
 
-<nav>
+---
+<header>
     <div class="nav--el"> 
         <span>sunnyside</span>
-        <img class="hamburger--el" src="../images/icon-hamburger.svg" alt="hamburger icon">
+        <img class="hamburger--el" src="../src/images/icon-hamburger.svg" alt="hamburger icon">
 
     </div>
     <h2 class="title--el">WE ARE CREATIVES</h2>
-    <img class="arrow--el" src="../images/icon-arrow-down.svg" alt="">
-</nav>
+    <img class="arrow--el" src="../src/images/icon-arrow-down.svg" alt="">
+</header>
+
+<style>
+.hamburger--el {
+  max-height: 18px;
+  align-self: center;
+}
+
+.nav--el {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title--el {
+  position: absolute;
+  font-family: "Fraunces", serif;
+  top: 2em;
+  left: 0.5em;
+  font-size: 40px;
+  letter-spacing: 0.125em;
+}
+
+.arrow--el {
+  position: absolute;
+  width: 30px;
+  height: 107.48px;
+  top: 20em;
+}
+</style>
