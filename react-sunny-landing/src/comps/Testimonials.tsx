@@ -4,11 +4,11 @@ import imageThomas from "../assets/images/image-thomas.jpg";
 
 const Testimonials = () => {
   return (
-    <section className="text-center">
+    <section className="text-center lg:p-8">
       <h2 className="font-serif text-4 tracking-[4px] uppercase text-[#A7AAAD] mt-16 mb-8">
         Client Testimonials
       </h2>
-      <div className="flex flex-col">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col items-center p-4 mb-8">
           <img
             src={imageEmily}

@@ -27,7 +27,7 @@ const FooterIcon = (props: any) => {
 const Footer = () => {
   return (
     <footer>
-      <div className="grid grid-cols-2 grid-rows-auto">
+      <div className="grid grid-cols-2 grid-rows-auto lg:flex lg:overflow-hidden">
         <img
           src={galleryMilk}
           alt="milk bottles with blue background"
@@ -50,12 +50,7 @@ const Footer = () => {
         />
       </div>
       <div className="bg-[#90D4C6] h-[350px]">
-        <div className="flex flex-col w-[80%] ml-auto mr-auto">
-          {/* <img
-            src={logo}
-            alt="sunnyside logo"
-            className="mt-16 mb-8 fill-current w-[170px] self-center"
-          /> */}
+        <div className="flex flex-col w-[80%] ml-auto mr-auto lg:w-[300px]">
           <div className="mt-16 ml-auto mr-auto mb-8">
             <FooterIcon width="170px" height="33px" fill="#2C7566" />
           </div>
