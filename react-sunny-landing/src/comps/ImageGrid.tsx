@@ -10,7 +10,10 @@ export interface Props {
 
 const ImageGrid = ({ width, breakpoint }) => {
   return (
-    <section className="flex lg:grid lg:grid-cols-2 lg:grid-rows-auto flex-col">
+    <section
+      className="flex lg:grid lg:grid-cols-2 lg:grid-rows-auto flex-col"
+      id="about"
+    >
       {width >= breakpoint ? (
         <img
           src={imageTransformLg}
@@ -24,7 +27,7 @@ const ImageGrid = ({ width, breakpoint }) => {
           className="w-[100%] mb-8"
         />
       )}
-      <div className="flex flex-col lg:row-start-1 text-center p-4">
+      <div className="flex flex-col lg:row-start-1 text-center p-4 lg:justify-center">
         <span className="font-serif mb-4 text-[32px] font-black">
           Transform your brand
         </span>
@@ -50,7 +53,7 @@ const ImageGrid = ({ width, breakpoint }) => {
           className="w-[100%] mb-8"
         />
       )}
-      <div className="flex flex-col text-center p-4">
+      <div className="flex flex-col text-center p-4 lg:justify-center">
         <span className="font-serif mb-4 text-[32px] font-black">
           Stand out to the right audience
         </span>
@@ -87,7 +90,7 @@ const ImageGrid = ({ width, breakpoint }) => {
         </div>
       )}
       {width >= breakpoint ? (
-        <div className="relative bg-[url('./assets/images/desktop/image-photography.jpg')] w-[100%] h-[600px] bg-cover text-center">
+        <div className="relative bg-[url('./assets/images/desktop/image-photography.jpg')] w-[100%] h-[600px] bg-cover text-center p-4">
           <span className="absolute top-[60%] left-[35%] font-serif text-[28px] font-black text-[#052C3B]">
             Photography
           </span>

@@ -26,7 +26,7 @@ const FooterIcon = (props: any) => {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="contact">
       <div className="grid grid-cols-2 grid-rows-auto lg:flex lg:overflow-hidden">
         <img
           src={galleryMilk}
@@ -55,9 +55,15 @@ const Footer = () => {
             <FooterIcon width="170px" height="33px" fill="#2C7566" />
           </div>
           <div className="flex justify-between text-[#2C7566] mb-16">
-            <a href="">About</a>
-            <a href="">Services</a>
-            <a href="">Projects</a>
+            <a href="" className="hover:underline">
+              About
+            </a>
+            <a href="" className="hover:underline">
+              Services
+            </a>
+            <a href="" className="hover:underline">
+              Projects
+            </a>
           </div>
         </div>
         <div className="flex justify-around w-[164px] ml-auto mr-auto">
